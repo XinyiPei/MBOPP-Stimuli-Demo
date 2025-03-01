@@ -3,6 +3,8 @@ from enum import Enum, auto
 from pathlib import Path
 
 import pkg_resources
+from PySide2.QtCore import Qt, QCoreApplication
+QCoreApplication.setAttribute(Qt.AA_ShareOpenGLContexts, True)
 
 def asset(*resourceParts):
 	resource = '/'.join(['assets'] + list(resourceParts))
