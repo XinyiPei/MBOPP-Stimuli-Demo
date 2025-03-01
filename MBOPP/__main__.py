@@ -140,5 +140,9 @@ class MBOPPApplication(QtWidgets.QApplication):
         super().exec_()
 
 if __name__ == "__main__":
+	import os
+	from PySide2.QtCore import Qt, QCoreApplication
+	os.environ["QT_WEBENGINE_DISABLE_SANDBOX"] = "1"
+	QCoreApplication.setAttribute(Qt.AA_ShareOpenGLContexts, True)
 	app = MBOPPApplication()
-	app.exec()
+	app.exec_()
